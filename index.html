@@ -92,6 +92,34 @@
   }
   .nav-links a:hover { color: var(--text); }
 
+  .lang-switch {
+    display: flex;
+    gap: 2px;
+    background: rgba(0,0,0,0.06);
+    border-radius: 999px;
+    padding: 3px;
+    flex-shrink: 0;
+  }
+
+  .lang-btn {
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--muted);
+    padding: 4px 9px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background .2s, color .2s;
+  }
+  .lang-btn:hover { color: var(--text); }
+  .lang-btn.active {
+    background: #fff;
+    color: var(--text);
+    box-shadow: 0 1px 4px rgba(0,0,0,.12);
+  }
+
   /* ---------- HERO ---------- */
   .hero {
     min-height: 100svh;
@@ -845,6 +873,12 @@
       <li><a href="#photos">Фото</a></li>
       <li><a href="#awards">Награды</a></li>
     </ul>
+    <div class="lang-switch" id="langSwitch">
+      <button class="lang-btn" data-lang="ru">RU</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="uz">UZ</button>
+      <button class="lang-btn" data-lang="ky">KG</button>
+    </div>
   </div>
 </nav>
 
@@ -1227,6 +1261,222 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   box.addEventListener('click', e => { if (e.target === box) close(); });
   addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 })();
+
+// ---------- Localization ----------
+const I18N = {
+ru: {
+  docTitle: "Мухаммадзохид — Личный блог",
+  nav: ["Кыргызстан", "Обо мне", "Путь", "Moodle AI", "Фото", "Награды"],
+  heroEyebrow: "Личный блог",
+  heroTitle: "Привет. Я <span class=\"grad\">Мухаммадзохид</span>.",
+  heroSub: "Мне 19 лет. Я из Кыргызстана — родился в Оше, вырос в Араване. Это обычная история обычного парня: семья, учеба, ошибки, возвраты к делу и шаг за шагом свой путь в программировании.",
+  btnProject: "Мой проект",
+  btnMore: "Узнать больше",
+  chips: ["🇰🇬 Кыргызстан", "🏔️ Ош / Араван", "🎓 Студент", "💻 Разработка", "🤖 AI-проект"],
+  eyebrows: ["Откуда я", "Обо мне", "Мой путь", "Главный проект", "Что было сложно", "Галерея", "Достижения"],
+  titles: ["Кыргызстан.", "Обычный парень.<br>Свой путь.", "Как я пришёл в программирование.", "Мои фото.", "Награды."],
+  leads: ["Горы, простор и место, где всё началось.", "Не по прямой. Зато по-настоящему.", "Листайте — как ленту.", "Результаты, которые стали подтверждением, что я иду в правильную сторону."],
+  captions: ["Сары-Челек", "Ош", "Горы Кыргызстана"],
+  aboutText: "Меня зовут <strong>Мухаммадзохид</strong>. Я вырос в Кыргызстане, в городе Ош, в районе Араван, где уважают семью, старших и простые человеческие ценности. Для меня это важно до сих пор.<br><br>В детстве я был обычным любопытным ребёнком: хотел понять, как всё работает, иногда лез туда, куда не надо, и мог часами разбирать вещи, чтобы посмотреть, что внутри. Это любопытство позже и привело меня в программирование.<br><br>Я не люблю делать из себя кого-то особенного. У меня были обычные радости, обычные трудности, периоды, когда я терял интерес, и моменты, когда приходилось начинать почти с нуля. <strong>Но именно так и складывается путь.</strong>",
+  factLabels: ["Откуда я", "Возраст", "Что важно", "Сейчас"],
+  factValues: ["Ош, Араван, Кыргызстан", "19 лет", "Семья, традиции, труд", "Учусь и работаю над проектами"],
+  steps: ["8 класс", "1 курс", "2 курс"],
+  stepTitles: ["Первые строки кода", "Пауза и возврат", "Настоящее возвращение"],
+  stepTexts: [
+    "Впервые начал программировать ещё в школе. Тогда это было просто интересно: хотелось понять, как создаются программы и что можно сделать самому.",
+    "Потом я на время забросил это дело. На первом курсе вернулся к программированию, но быстро выгорел. Тогда стало понятно, что одного интереса мало — нужна дисциплина и терпение.",
+    "По-настоящему я вернулся только на втором курсе. Уже без лишнего шума, спокойно и по делу. С тех пор начал двигаться увереннее и собирать результаты, которые стали подтверждением, что я иду в правильную сторону."
+  ],
+  projTagline: "Анализ кода с помощью искусственного интеллекта. Инструмент, который помогает разбирать код, находить ошибки и делать обучение понятнее.",
+  projCardTitles: ["AI и анализ кода", "Android-разработка", "Обучение", "Грант и развитие"],
+  projCardTexts: [
+    "Основное направление проекта — искусственный интеллект, который понимает код и объясняет его.",
+    "Мне интересна мобильная разработка — это второй большой фокус наряду с AI.",
+    "Цель — сделать обучение программированию проще и понятнее для студентов.",
+    "Сейчас я иду на грант, и проект уже начали замечать. Для меня это просто ещё один шаг вперёд."
+  ],
+  quote: "Были и тяжёлые моменты: выгорание, сложные периоды, моменты, когда опускались руки. Но со временем я научился спокойнее относиться к трудностям — <span class=\"grad\">и просто продолжать двигаться дальше.</span>",
+  quoteNote: "Без лишних слов — просто опыт, который сделал меня спокойнее и сильнее.",
+  ctaTitle: "Заглядывай <span class=\"grad\">в канал.</span>",
+  ctaText: "Здесь будет мой путь без пафоса — просто жизнь, учеба и проекты.",
+  ctaBtn: "Открыть канал",
+  footer: "© 2026 Мухаммадзохид · Ош, Кыргызстан"
+},
+en: {
+  docTitle: "Muhammadzohid — Personal blog",
+  nav: ["Kyrgyzstan", "About", "Journey", "Moodle AI", "Photos", "Awards"],
+  heroEyebrow: "Personal blog",
+  heroTitle: "Hi. I'm <span class=\"grad\">Muhammadzohid</span>.",
+  heroSub: "I'm 19, from Kyrgyzstan — born in Osh, raised in Aravan. This is an ordinary story of an ordinary guy: family, studies, mistakes, comebacks, and a step-by-step path into programming.",
+  btnProject: "My project",
+  btnMore: "Learn more",
+  chips: ["🇰🇬 Kyrgyzstan", "🏔️ Osh / Aravan", "🎓 Student", "💻 Development", "🤖 AI project"],
+  eyebrows: ["Where I'm from", "About me", "My journey", "Main project", "What was hard", "Gallery", "Achievements"],
+  titles: ["Kyrgyzstan.", "An ordinary guy.<br>His own path.", "How I got into programming.", "My photos.", "Awards."],
+  leads: ["Mountains, open space, and the place where it all began.", "Not in a straight line. But for real.", "Swipe through — like a feed.", "Results that proved to me I'm heading in the right direction."],
+  captions: ["Sary-Chelek", "Osh", "Mountains of Kyrgyzstan"],
+  aboutText: "My name is <strong>Muhammadzohid</strong>. I grew up in Kyrgyzstan, in the city of Osh, in the Aravan district, where family, elders and simple human values are respected. That still matters to me.<br><br>As a child I was an ordinary curious kid: I wanted to understand how everything works, sometimes poked around where I shouldn't, and could spend hours taking things apart to see what was inside. That curiosity later led me to programming.<br><br>I don't like making myself out to be someone special. I've had ordinary joys, ordinary struggles, times when I lost interest, and moments when I had to start almost from scratch. <strong>But that's exactly how a path is made.</strong>",
+  factLabels: ["Where I'm from", "Age", "What matters", "Right now"],
+  factValues: ["Osh, Aravan, Kyrgyzstan", "19 years old", "Family, traditions, hard work", "Studying and building projects"],
+  steps: ["8th grade", "1st year", "2nd year"],
+  stepTitles: ["First lines of code", "A pause and a return", "The real comeback"],
+  stepTexts: [
+    "I first started programming back in school. It was simply interesting: I wanted to understand how programs are made and what I could build myself.",
+    "Then I dropped it for a while. In my first year I came back to programming but quickly burned out. That's when it became clear that interest alone is not enough — you need discipline and patience.",
+    "I truly came back only in my second year. Quietly, calmly, and to the point. Since then I've been moving with more confidence, collecting results that proved to me I'm heading in the right direction."
+  ],
+  projTagline: "Code analysis powered by artificial intelligence. A tool that helps understand code, find bugs, and make learning clearer.",
+  projCardTitles: ["AI & code analysis", "Android development", "Learning", "Grant & growth"],
+  projCardTexts: [
+    "The core of the project is artificial intelligence that understands code and explains it.",
+    "I'm into mobile development — my second big focus alongside AI.",
+    "The goal is to make learning programming simpler and clearer for students.",
+    "I'm now going for a grant, and the project is starting to get noticed. For me it's just another step forward."
+  ],
+  quote: "There were tough moments too: burnout, difficult periods, times when I wanted to give up. But over time I learned to take difficulties more calmly — <span class=\"grad\">and just keep moving forward.</span>",
+  quoteNote: "No big words — just experience that made me calmer and stronger.",
+  ctaTitle: "Check out <span class=\"grad\">my channel.</span>",
+  ctaText: "My journey without the hype — just life, studies and projects.",
+  ctaBtn: "Open the channel",
+  footer: "© 2026 Muhammadzohid · Osh, Kyrgyzstan"
+},
+uz: {
+  docTitle: "Muhammadzohid — Shaxsiy blog",
+  nav: ["Qirgʻiziston", "Men haqimda", "Yoʻlim", "Moodle AI", "Suratlar", "Mukofotlar"],
+  heroEyebrow: "Shaxsiy blog",
+  heroTitle: "Salom. Men — <span class=\"grad\">Muhammadzohid</span>.",
+  heroSub: "Men 19 yoshdaman. Qirgʻizistondanman — Oʻsh shahrida tugʻilib, Aravanda ulgʻayganman. Bu oddiy yigitning oddiy hikoyasi: oila, oʻqish, xatolar, qaytishlar va dasturlash sari qadamba-qadam yoʻl.",
+  btnProject: "Mening loyiham",
+  btnMore: "Batafsil",
+  chips: ["🇰🇬 Qirgʻiziston", "🏔️ Oʻsh / Aravan", "🎓 Talaba", "💻 Dasturlash", "🤖 AI loyiha"],
+  eyebrows: ["Qayerdanman", "Men haqimda", "Mening yoʻlim", "Asosiy loyiha", "Nima qiyin boʻldi", "Galereya", "Yutuqlar"],
+  titles: ["Qirgʻiziston.", "Oddiy yigit.<br>Oʻz yoʻli.", "Dasturlashga qanday kelganman.", "Suratlarim.", "Mukofotlar."],
+  leads: ["Togʻlar, kenglik va hammasi boshlangan joy.", "Toʻgʻri chiziq boʻylab emas. Lekin chinakamiga.", "Varaqlang — lenta kabi.", "Toʻgʻri yoʻnalishda ketayotganimni tasdiqlagan natijalar."],
+  captions: ["Sari-Chelak", "Oʻsh", "Qirgʻiziston togʻlari"],
+  aboutText: "Mening ismim <strong>Muhammadzohid</strong>. Men Qirgʻizistonda, Oʻsh shahrida, Aravan tumanida ulgʻayganman — u yerda oila, kattalar va oddiy insoniy qadriyatlar hurmat qilinadi. Bu men uchun hozir ham muhim.<br><br>Bolaligimda oddiy qiziquvchan bola edim: hamma narsa qanday ishlashini tushunishni xohlardim, baʼzan kerak boʻlmagan joylarga ham aralashardim va ichida nima borligini koʻrish uchun soatlab narsalarni qismlarga ajratardim. Aynan shu qiziqish keyinchalik meni dasturlashga olib keldi.<br><br>Oʻzimni alohida odam qilib koʻrsatishni yoqtirmayman. Menda oddiy quvonchlar, oddiy qiyinchiliklar, qiziqishni yoʻqotgan davrlar va deyarli noldan boshlashga toʻgʻri kelgan paytlar boʻlgan. <strong>Ammo yoʻl aynan shunday shakllanadi.</strong>",
+  factLabels: ["Qayerdanman", "Yoshim", "Nima muhim", "Hozir"],
+  factValues: ["Oʻsh, Aravan, Qirgʻiziston", "19 yosh", "Oila, anʼanalar, mehnat", "Oʻqiyapman va loyihalar ustida ishlayapman"],
+  steps: ["8-sinf", "1-kurs", "2-kurs"],
+  stepTitles: ["Birinchi kod satrlari", "Tanaffus va qaytish", "Haqiqiy qaytish"],
+  stepTexts: [
+    "Dasturlashni maktabdayoq boshlaganman. Oʻshanda bu shunchaki qiziq edi: dasturlar qanday yaratilishini va oʻzim nima qila olishimni tushunishni xohlardim.",
+    "Keyin bu ishni bir muddat tashlab qoʻydim. Birinchi kursda dasturlashga qaytdim, lekin tezda charchab qoldim. Oʻshanda qiziqishning oʻzi yetarli emasligi ayon boʻldi — intizom va sabr kerak.",
+    "Chinakamiga faqat ikkinchi kursda qaytdim. Ortiqcha shovqinsiz, xotirjam va aniq maqsad bilan. Oʻshandan beri ishonchliroq harakat qilyapman va toʻgʻri yoʻnalishda ketayotganimni tasdiqlovchi natijalar toʻplayapman."
+  ],
+  projTagline: "Sunʼiy intellekt yordamida kod tahlili. Kodni tushunishga, xatolarni topishga va oʻrganishni tushunarliroq qilishga yordam beradigan vosita.",
+  projCardTitles: ["AI va kod tahlili", "Android dasturlash", "Taʼlim", "Grant va rivojlanish"],
+  projCardTexts: [
+    "Loyihaning asosiy yoʻnalishi — kodni tushunadigan va tushuntiradigan sunʼiy intellekt.",
+    "Menga mobil dasturlash qiziq — bu AI bilan birga ikkinchi katta yoʻnalishim.",
+    "Maqsad — talabalar uchun dasturlashni oʻrganishni soddaroq va tushunarliroq qilish.",
+    "Hozir grantga harakat qilyapman va loyihani seza boshlashdi. Men uchun bu shunchaki yana bir qadam."
+  ],
+  quote: "Ogʻir damlar ham boʻldi: charchash, murakkab davrlar, qoʻl siltagim kelgan paytlar. Lekin vaqt oʻtishi bilan qiyinchiliklarga xotirjamroq qarashni oʻrgandim — <span class=\"grad\">va shunchaki oldinga yurishda davom etaman.</span>",
+  quoteNote: "Ortiqcha gaplarsiz — meni xotirjamroq va kuchliroq qilgan tajriba, xolos.",
+  ctaTitle: "Kanalimga <span class=\"grad\">tashrif buyuring.</span>",
+  ctaText: "Bu yerda mening yoʻlim dabdabasiz boʻladi — shunchaki hayot, oʻqish va loyihalar.",
+  ctaBtn: "Kanalni ochish",
+  footer: "© 2026 Muhammadzohid · Oʻsh, Qirgʻiziston"
+},
+ky: {
+  docTitle: "Мухаммадзохид — Жеке блог",
+  nav: ["Кыргызстан", "Мен жөнүндө", "Жолум", "Moodle AI", "Сүрөттөр", "Сыйлыктар"],
+  heroEyebrow: "Жеке блог",
+  heroTitle: "Салам. Мен — <span class=\"grad\">Мухаммадзохид</span>.",
+  heroSub: "Мен 19 жаштамын. Кыргызстанданмын — Ош шаарында төрөлүп, Араванда чоңойгом. Бул жөнөкөй жигиттин жөнөкөй тарыхы: үй-бүлө, окуу, каталар, кайра баштоолор жана программалоого карай кадам сайын жол.",
+  btnProject: "Менин долбоорум",
+  btnMore: "Көбүрөөк билүү",
+  chips: ["🇰🇬 Кыргызстан", "🏔️ Ош / Араван", "🎓 Студент", "💻 Иштеп чыгуу", "🤖 AI долбоор"],
+  eyebrows: ["Кайдан болом", "Мен жөнүндө", "Менин жолум", "Башкы долбоор", "Эмне кыйын болду", "Галерея", "Жетишкендиктер"],
+  titles: ["Кыргызстан.", "Жөнөкөй жигит.<br>Өз жолу.", "Программалоого кантип келгем.", "Менин сүрөттөрүм.", "Сыйлыктар."],
+  leads: ["Тоолор, кеңдик жана баары башталган жер.", "Түз сызык менен эмес. Бирок чыныгы жол.", "Барактаңыз — лента сыяктуу.", "Туура багытта бара жатканымды тастыктаган натыйжалар."],
+  captions: ["Сары-Челек", "Ош", "Кыргызстандын тоолору"],
+  aboutText: "Менин атым <strong>Мухаммадзохид</strong>. Мен Кыргызстанда, Ош шаарында, Араван районунда чоңойгом — ал жерде үй-бүлөнү, улууларды жана жөнөкөй адамдык баалуулуктарды сыйлашат. Бул мен үчүн азыр да маанилүү.<br><br>Балалыгымда жөнөкөй кызыкчыл бала элем: баары кантип иштээрин түшүнгүм келчү, кээде кереги жок жерлерге да кийлигишчүмүн жана ичинде эмне бар экенин көрүү үчүн буюмдарды сааттап чечип отурчумун. Дал ушул кызыгуу кийин мени программалоого алып келди.<br><br>Өзүмдү өзгөчө адам катары көрсөткөндү жактырбайм. Менде жөнөкөй кубанычтар, жөнөкөй кыйынчылыктар, кызыгууну жоготкон учурлар жана дээрлик нөлдөн баштоого туура келген учурлар болгон. <strong>Бирок жол дал ушундай түзүлөт.</strong>",
+  factLabels: ["Кайдан болом", "Жашым", "Эмне маанилүү", "Азыр"],
+  factValues: ["Ош, Араван, Кыргызстан", "19 жашта", "Үй-бүлө, салттар, эмгек", "Окуп жатам жана долбоорлор менен иштеп жатам"],
+  steps: ["8-класс", "1-курс", "2-курс"],
+  stepTitles: ["Алгачкы код саптары", "Тыныгуу жана кайтуу", "Чыныгы кайтуу"],
+  stepTexts: [
+    "Программалоону мектепте эле баштагам. Ал кезде бул жөн гана кызык болчу: программалар кантип түзүлөрүн жана өзүм эмне жасай аларымды түшүнгүм келчү.",
+    "Кийин бул ишти бир азга таштап койгом. Биринчи курста программалоого кайттым, бирок тез эле чарчап калдым. Ошондо кызыгуу гана жетишсиз экени белгилүү болду — тартип жана сабыр керек.",
+    "Чындап экинчи курста гана кайттым. Ашыкча ызы-чуусуз, токтоо жана так максат менен. Ошондон бери ишенимдүүрөөк алдыга жылып, туура багытта бара жатканымды тастыктаган натыйжаларды топтоп жатам."
+  ],
+  projTagline: "Жасалма интеллект жардамы менен код талдоо. Кодду түшүнүүгө, каталарды табууга жана окууну түшүнүктүүрөөк кылууга жардам берген курал.",
+  projCardTitles: ["AI жана код талдоо", "Android иштеп чыгуу", "Окутуу", "Грант жана өнүгүү"],
+  projCardTexts: [
+    "Долбоордун негизги багыты — кодду түшүнгөн жана түшүндүргөн жасалма интеллект.",
+    "Мага мобилдик иштеп чыгуу кызык — бул AI менен катар экинчи чоң багытым.",
+    "Максат — студенттер үчүн программалоону үйрөнүүнү жөнөкөй жана түшүнүктүү кылуу.",
+    "Азыр грантка бара жатам, долбоорду байкай башташты. Мен үчүн бул жөн гана дагы бир кадам."
+  ],
+  quote: "Оор учурлар да болгон: чарчоо, татаал мезгилдер, колум шилтегим келген учурлар. Бирок убакыттын өтүшү менен кыйынчылыктарга токтоо кароону үйрөндүм — <span class=\"grad\">жана жөн гана алдыга жылууну улантам.</span>",
+  quoteNote: "Ашыкча сөзсүз — мени токтоо жана күчтүү кылган тажрыйба гана.",
+  ctaTitle: "Каналыма <span class=\"grad\">кайрылып туруңуз.</span>",
+  ctaText: "Бул жерде менин жолум ашыкча сөзсүз болот — жөн гана жашоо, окуу жана долбоорлор.",
+  ctaBtn: "Каналды ачуу",
+  footer: "© 2026 Мухаммадзохид · Ош, Кыргызстан"
+}
+};
+
+const I18N_MAP = [
+  ['.nav-links a', 'nav'],
+  ['.hero-eyebrow', 'heroEyebrow'],
+  ['.hero h1', 'heroTitle', true],
+  ['.hero-sub', 'heroSub'],
+  ['.hero-actions .btn-primary', 'btnProject'],
+  ['.hero-actions .btn-ghost', 'btnMore'],
+  ['.chips .chip', 'chips'],
+  ['.section-eyebrow', 'eyebrows'],
+  ['.section-title', 'titles', true],
+  ['.section-lead', 'leads'],
+  ['.about-grid .text', 'aboutText', true],
+  ['.fact .label', 'factLabels'],
+  ['.fact .value', 'factValues'],
+  ['.tl-step', 'steps'],
+  ['.tl-card h3', 'stepTitles'],
+  ['.tl-card p', 'stepTexts'],
+  ['.project-tagline', 'projTagline'],
+  ['.p-card h4', 'projCardTitles'],
+  ['.p-card p', 'projCardTexts'],
+  ['.quote', 'quote', true],
+  ['.quote-note', 'quoteNote'],
+  ['.cta h2', 'ctaTitle', true],
+  ['.cta p', 'ctaText'],
+  ['.cta .btn', 'ctaBtn'],
+  ['footer', 'footer']
+];
+
+function applyLang(lang) {
+  const t = I18N[lang] || I18N.ru;
+  I18N_MAP.forEach(([sel, key, html]) => {
+    const val = t[key];
+    document.querySelectorAll(sel).forEach((el, i) => {
+      const v = Array.isArray(val) ? val[i] : val;
+      if (v == null) return;
+      if (html) el.innerHTML = v; else el.textContent = v;
+    });
+  });
+
+  document.querySelectorAll('#kgSlider .slides img').forEach((img, i) => {
+    img.dataset.caption = t.captions[i];
+  });
+  const activeDot = [...document.querySelectorAll('#sliderDots .dot')]
+    .findIndex(d => d.classList.contains('active'));
+  document.getElementById('slideCaption').textContent = t.captions[Math.max(0, activeDot)];
+
+  document.documentElement.lang = lang;
+  document.title = t.docTitle;
+  document.querySelectorAll('.lang-btn').forEach(b =>
+    b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('lang', lang); } catch (e) {}
+}
+
+document.querySelectorAll('.lang-btn').forEach(b =>
+  b.addEventListener('click', () => applyLang(b.dataset.lang)));
+
+let savedLang = 'ru';
+try { savedLang = localStorage.getItem('lang') || 'ru'; } catch (e) {}
+applyLang(savedLang);
 </script>
 </body>
 </html>
