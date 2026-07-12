@@ -678,6 +678,42 @@
   .p-card h4 { font-size: 16px; margin-bottom: 8px; color: #f5f5f7; }
   .p-card p { font-size: 13.5px; color: #a1a1a6; line-height: 1.65; }
 
+  .aside-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+  }
+
+  .aside-project {
+    max-width: 470px;
+    border: 1px dashed rgba(255,255,255,.28);
+    border-radius: 20px;
+    padding: 24px 26px;
+    transition: border-color .3s;
+  }
+  .aside-project:hover { border-color: rgba(255,159,10,.5); }
+
+  .aside-eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #ff9f0a;
+    background: rgba(255,159,10,.12);
+    border-radius: 999px;
+    padding: 5px 11px;
+    margin-bottom: 14px;
+  }
+
+  .aside-project .icon { font-size: 26px; margin-bottom: 10px; }
+  .aside-project h4 { font-size: 17px; color: #f5f5f7; margin-bottom: 8px; }
+  .aside-project .aside-text { font-size: 13.5px; color: #a1a1a6; line-height: 1.7; }
+
+  @media (max-width: 640px) {
+    .aside-project { max-width: 100%; flex: 1; }
+  }
+
   /* ---------- QUOTE ---------- */
   .quote-wrap {
     max-width: 820px;
@@ -1088,8 +1124,7 @@
           <span class="tl-step">2 курс</span>
           <h3>Настоящее возвращение</h3>
           <p>По-настоящему я вернулся только на втором курсе. Уже без лишнего шума, спокойно
-          и по делу. С тех пор начал двигаться увереннее и собирать результаты, которые стали
-          подтверждением, что я иду в правильную сторону.</p>
+          и по делу. С тех пор начал двигаться увереннее и собирать результаты, которые стали подтверждением, что я иду в правильную сторону.</p>
         </div>
       </div>
     </div>
@@ -1109,31 +1144,39 @@
         <p class="section-eyebrow">Главный проект</p>
         <div class="project-name">Moodle AI</div>
         <p class="project-tagline">
-          Анализ кода с помощью искусственного интеллекта.
-          Инструмент, который помогает разбирать код, находить ошибки
-          и делать обучение понятнее.
+          Moodle AI определяет код, сгенерированный искусственным интеллектом,
+          и помогает учителям проверять лабораторные работы учеников.
+          Чтобы в обучении была честность, а знания — настоящими.
         </p>
       </div>
       <div class="project-grid">
         <div class="p-card reveal">
-          <div class="icon">🤖</div>
-          <h4>AI и анализ кода</h4>
-          <p>Основное направление проекта — искусственный интеллект, который понимает код и объясняет его.</p>
+          <div class="icon">🔍</div>
+          <h4>Детекция AI-кода</h4>
+          <p>Инструмент выявляет код, написанный искусственным интеллектом, а не учеником.</p>
         </div>
         <div class="p-card reveal" style="transition-delay:.08s">
-          <div class="icon">📱</div>
-          <h4>Android-разработка</h4>
-          <p>Мне интересна мобильная разработка — это второй большой фокус наряду с AI.</p>
+          <div class="icon">👨‍🏫</div>
+          <h4>Для учителей</h4>
+          <p>Помогает учителям быстро и объективно проверять лабораторные работы.</p>
         </div>
         <div class="p-card reveal" style="transition-delay:.16s">
           <div class="icon">🎓</div>
-          <h4>Обучение</h4>
-          <p>Цель — сделать обучение программированию проще и понятнее для студентов.</p>
+          <h4>Честное обучение</h4>
+          <p>Я хочу, чтобы ученики получали настоящие знания, а не списывали работы у искусственного интеллекта.</p>
         </div>
         <div class="p-card reveal" style="transition-delay:.24s">
           <div class="icon">🚀</div>
-          <h4>Грант и развитие</h4>
-          <p>Сейчас я иду на грант, и проект уже начали замечать. Для меня это просто ещё один шаг вперёд.</p>
+          <h4>Грант</h4>
+          <p>Мы уже получили грант на этот проект и развиваем его дальше.</p>
+        </div>
+      </div>
+      <div class="aside-row reveal">
+        <div class="aside-project">
+          <span class="aside-eyebrow">Отдельно от Moodle AI</span>
+          <div class="icon">📱</div>
+          <h4>Android-разработка</h4>
+          <p class="aside-text">Мне интересна мобильная разработка — это отдельное направление, которым я занимаюсь параллельно с проектом.</p>
         </div>
       </div>
     </div>
@@ -1148,7 +1191,7 @@
           Но со временем я научился спокойнее относиться к трудностям —
           <span class="grad">и просто продолжать двигаться дальше.</span>
         </p>
-        <p class="quote-note">Без лишних слов — просто опыт, который сделал меня спокойнее и сильнее.</p>
+        <p class="quote-note">Без лишних слов — просто опыт, который сделал меня спокойнее.</p>
       </div>
     </div>
   </section>
@@ -1175,9 +1218,9 @@
   <section id="awards">
     <div class="container">
       <div class="center reveal">
-        <p class="section-eyebrow">Достижения</p>
+        <p class="section-eyebrow">Грамоты</p>
         <h2 class="section-title">Награды.</h2>
-        <p class="section-lead">Результаты, которые стали подтверждением, что я иду в правильную сторону.</p>
+        <p class="section-lead">Несколько грамот и сертификатов.</p>
       </div>
       <div class="awards-grid">
         <div class="award reveal"><img src="award1.jpeg" alt="Награда 1" loading="lazy"></div>
@@ -1341,9 +1384,9 @@ ru: {
   btnProject: "Мой проект",
   btnMore: "Узнать больше",
   chips: ["🇰🇬 Кыргызстан", "🏔️ Ош / Араван", "🎓 Студент", "💻 Разработка", "🤖 AI-проект"],
-  eyebrows: ["Откуда я", "Обо мне", "Мой путь", "Главный проект", "Что было сложно", "Галерея", "Достижения"],
+  eyebrows: ["Откуда я", "Обо мне", "Мой путь", "Главный проект", "Что было сложно", "Галерея", "Грамоты"],
   titles: ["Кыргызстан.", "Обычный парень.<br>Свой путь.", "Как я пришёл в программирование.", "Мои фото.", "Награды."],
-  leads: ["Горы, простор и место, где всё началось.", "Не по прямой. Зато по-настоящему.", "Листайте — как ленту.", "Результаты, которые стали подтверждением, что я иду в правильную сторону."],
+  leads: ["Горы, простор и место, где всё началось.", "Не по прямой. Зато по-настоящему.", "Листайте — как ленту.", "Несколько грамот и сертификатов."],
   captions: ["Сары-Челек", "Ош", "Горы Кыргызстана"],
   aboutText: "Меня зовут <strong>Мухаммадзохид</strong>. Я вырос в Кыргызстане, в городе Ош, в районе Араван, где уважают семью, старших и простые человеческие ценности. Для меня это важно до сих пор.<br><br>В детстве я был обычным любопытным ребёнком: хотел понять, как всё работает, иногда лез туда, куда не надо, и мог часами разбирать вещи, чтобы посмотреть, что внутри. Это любопытство позже и привело меня в программирование.<br><br>Я не люблю делать из себя кого-то особенного. У меня были обычные радости, обычные трудности, периоды, когда я терял интерес, и моменты, когда приходилось начинать почти с нуля. <strong>Но именно так и складывается путь.</strong>",
   factLabels: ["Откуда я", "Возраст", "Что важно", "Сейчас"],
@@ -1355,16 +1398,19 @@ ru: {
     "Потом я на время забросил это дело. На первом курсе вернулся к программированию, но быстро выгорел. Тогда стало понятно, что одного интереса мало — нужна дисциплина и терпение.",
     "По-настоящему я вернулся только на втором курсе. Уже без лишнего шума, спокойно и по делу. С тех пор начал двигаться увереннее и собирать результаты, которые стали подтверждением, что я иду в правильную сторону."
   ],
-  projTagline: "Анализ кода с помощью искусственного интеллекта. Инструмент, который помогает разбирать код, находить ошибки и делать обучение понятнее.",
-  projCardTitles: ["AI и анализ кода", "Android-разработка", "Обучение", "Грант и развитие"],
+  projTagline: "Moodle AI определяет код, сгенерированный искусственным интеллектом, и помогает учителям проверять лабораторные работы учеников. Чтобы в обучении была честность, а знания — настоящими.",
+  projCardTitles: ["Детекция AI-кода", "Для учителей", "Честное обучение", "Грант"],
   projCardTexts: [
-    "Основное направление проекта — искусственный интеллект, который понимает код и объясняет его.",
-    "Мне интересна мобильная разработка — это второй большой фокус наряду с AI.",
-    "Цель — сделать обучение программированию проще и понятнее для студентов.",
-    "Сейчас я иду на грант, и проект уже начали замечать. Для меня это просто ещё один шаг вперёд."
+    "Инструмент выявляет код, написанный искусственным интеллектом, а не учеником.",
+    "Помогает учителям быстро и объективно проверять лабораторные работы.",
+    "Я хочу, чтобы ученики получали настоящие знания, а не списывали работы у искусственного интеллекта.",
+    "Мы уже получили грант на этот проект и развиваем его дальше."
   ],
+  asideEyebrow: "Отдельно от Moodle AI",
+  asideTitle: "Android-разработка",
+  asideText: "Мне интересна мобильная разработка — это отдельное направление, которым я занимаюсь параллельно с проектом.",
   quote: "Были и тяжёлые моменты: выгорание, сложные периоды, моменты, когда опускались руки. Но со временем я научился спокойнее относиться к трудностям — <span class=\"grad\">и просто продолжать двигаться дальше.</span>",
-  quoteNote: "Без лишних слов — просто опыт, который сделал меня спокойнее и сильнее.",
+  quoteNote: "Без лишних слов — просто опыт, который сделал меня спокойнее.",
   ctaTitle: "Заглядывай <span class=\"grad\">в канал.</span>",
   ctaText: "Здесь будет мой путь без пафоса — просто жизнь, учеба и проекты.",
   ctaBtn: "Открыть канал",
@@ -1379,9 +1425,9 @@ en: {
   btnProject: "My project",
   btnMore: "Learn more",
   chips: ["🇰🇬 Kyrgyzstan", "🏔️ Osh / Aravan", "🎓 Student", "💻 Development", "🤖 AI project"],
-  eyebrows: ["Where I'm from", "About me", "My journey", "Main project", "What was hard", "Gallery", "Achievements"],
+  eyebrows: ["Where I'm from", "About me", "My journey", "Main project", "What was hard", "Gallery", "Certificates"],
   titles: ["Kyrgyzstan.", "An ordinary guy.<br>His own path.", "How I got into programming.", "My photos.", "Awards."],
-  leads: ["Mountains, open space, and the place where it all began.", "Not in a straight line. But for real.", "Swipe through — like a feed.", "Results that proved to me I'm heading in the right direction."],
+  leads: ["Mountains, open space, and the place where it all began.", "Not in a straight line. But for real.", "Swipe through — like a feed.", "A few certificates and diplomas."],
   captions: ["Sary-Chelek", "Osh", "Mountains of Kyrgyzstan"],
   aboutText: "My name is <strong>Muhammadzohid</strong>. I grew up in Kyrgyzstan, in the city of Osh, in the Aravan district, where family, elders and simple human values are respected. That still matters to me.<br><br>As a child I was an ordinary curious kid: I wanted to understand how everything works, sometimes poked around where I shouldn't, and could spend hours taking things apart to see what was inside. That curiosity later led me to programming.<br><br>I don't like making myself out to be someone special. I've had ordinary joys, ordinary struggles, times when I lost interest, and moments when I had to start almost from scratch. <strong>But that's exactly how a path is made.</strong>",
   factLabels: ["Where I'm from", "Age", "What matters", "Right now"],
@@ -1393,16 +1439,19 @@ en: {
     "Then I dropped it for a while. In my first year I came back to programming but quickly burned out. That's when it became clear that interest alone is not enough — you need discipline and patience.",
     "I truly came back only in my second year. Quietly, calmly, and to the point. Since then I've been moving with more confidence, collecting results that proved to me I'm heading in the right direction."
   ],
-  projTagline: "Code analysis powered by artificial intelligence. A tool that helps understand code, find bugs, and make learning clearer.",
-  projCardTitles: ["AI & code analysis", "Android development", "Learning", "Grant & growth"],
+  projTagline: "Moodle AI detects code generated by artificial intelligence and helps teachers check students' lab work. So that learning stays honest and knowledge is real.",
+  projCardTitles: ["AI code detection", "For teachers", "Honest learning", "Grant"],
   projCardTexts: [
-    "The core of the project is artificial intelligence that understands code and explains it.",
-    "I'm into mobile development — my second big focus alongside AI.",
-    "The goal is to make learning programming simpler and clearer for students.",
-    "I'm now going for a grant, and the project is starting to get noticed. For me it's just another step forward."
+    "The tool identifies code written by artificial intelligence rather than by the student.",
+    "Helps teachers check lab assignments quickly and fairly.",
+    "I want students to gain real knowledge instead of copying their work from AI.",
+    "We have already received a grant for this project and keep developing it."
   ],
+  asideEyebrow: "Separate from Moodle AI",
+  asideTitle: "Android development",
+  asideText: "I'm into mobile development — a separate direction I work on alongside the project.",
   quote: "There were tough moments too: burnout, difficult periods, times when I wanted to give up. But over time I learned to take difficulties more calmly — <span class=\"grad\">and just keep moving forward.</span>",
-  quoteNote: "No big words — just experience that made me calmer and stronger.",
+  quoteNote: "No big words — just experience that made me calmer.",
   ctaTitle: "Check out <span class=\"grad\">my channel.</span>",
   ctaText: "My journey without the hype — just life, studies and projects.",
   ctaBtn: "Open the channel",
@@ -1417,9 +1466,9 @@ uz: {
   btnProject: "Mening loyiham",
   btnMore: "Batafsil",
   chips: ["🇰🇬 Qirgʻiziston", "🏔️ Oʻsh / Aravan", "🎓 Talaba", "💻 Dasturlash", "🤖 AI loyiha"],
-  eyebrows: ["Qayerdanman", "Men haqimda", "Mening yoʻlim", "Asosiy loyiha", "Nima qiyin boʻldi", "Galereya", "Yutuqlar"],
+  eyebrows: ["Qayerdanman", "Men haqimda", "Mening yoʻlim", "Asosiy loyiha", "Nima qiyin boʻldi", "Galereya", "Sertifikatlar"],
   titles: ["Qirgʻiziston.", "Oddiy yigit.<br>Oʻz yoʻli.", "Dasturlashga qanday kelganman.", "Suratlarim.", "Mukofotlar."],
-  leads: ["Togʻlar, kenglik va hammasi boshlangan joy.", "Toʻgʻri chiziq boʻylab emas. Lekin chinakamiga.", "Varaqlang — lenta kabi.", "Toʻgʻri yoʻnalishda ketayotganimni tasdiqlagan natijalar."],
+  leads: ["Togʻlar, kenglik va hammasi boshlangan joy.", "Toʻgʻri chiziq boʻylab emas. Lekin chinakamiga.", "Varaqlang — lenta kabi.", "Bir nechta faxriy yorliq va sertifikat."],
   captions: ["Sari-Chelak", "Oʻsh", "Qirgʻiziston togʻlari"],
   aboutText: "Mening ismim <strong>Muhammadzohid</strong>. Men Qirgʻizistonda, Oʻsh shahrida, Aravan tumanida ulgʻayganman — u yerda oila, kattalar va oddiy insoniy qadriyatlar hurmat qilinadi. Bu men uchun hozir ham muhim.<br><br>Bolaligimda oddiy qiziquvchan bola edim: hamma narsa qanday ishlashini tushunishni xohlardim, baʼzan kerak boʻlmagan joylarga ham aralashardim va ichida nima borligini koʻrish uchun soatlab narsalarni qismlarga ajratardim. Aynan shu qiziqish keyinchalik meni dasturlashga olib keldi.<br><br>Oʻzimni alohida odam qilib koʻrsatishni yoqtirmayman. Menda oddiy quvonchlar, oddiy qiyinchiliklar, qiziqishni yoʻqotgan davrlar va deyarli noldan boshlashga toʻgʻri kelgan paytlar boʻlgan. <strong>Ammo yoʻl aynan shunday shakllanadi.</strong>",
   factLabels: ["Qayerdanman", "Yoshim", "Nima muhim", "Hozir"],
@@ -1431,16 +1480,19 @@ uz: {
     "Keyin bu ishni bir muddat tashlab qoʻydim. Birinchi kursda dasturlashga qaytdim, lekin tezda charchab qoldim. Oʻshanda qiziqishning oʻzi yetarli emasligi ayon boʻldi — intizom va sabr kerak.",
     "Chinakamiga faqat ikkinchi kursda qaytdim. Ortiqcha shovqinsiz, xotirjam va aniq maqsad bilan. Oʻshandan beri ishonchliroq harakat qilyapman va toʻgʻri yoʻnalishda ketayotganimni tasdiqlovchi natijalar toʻplayapman."
   ],
-  projTagline: "Sunʼiy intellekt yordamida kod tahlili. Kodni tushunishga, xatolarni topishga va oʻrganishni tushunarliroq qilishga yordam beradigan vosita.",
-  projCardTitles: ["AI va kod tahlili", "Android dasturlash", "Taʼlim", "Grant va rivojlanish"],
+  projTagline: "Moodle AI sunʼiy intellekt yozgan kodni aniqlaydi va oʻqituvchilarga oʻquvchilarning laboratoriya ishlarini tekshirishga yordam beradi. Taʼlim halol, bilim esa haqiqiy boʻlishi uchun.",
+  projCardTitles: ["AI kodini aniqlash", "Oʻqituvchilar uchun", "Halol taʼlim", "Grant"],
   projCardTexts: [
-    "Loyihaning asosiy yoʻnalishi — kodni tushunadigan va tushuntiradigan sunʼiy intellekt.",
-    "Menga mobil dasturlash qiziq — bu AI bilan birga ikkinchi katta yoʻnalishim.",
-    "Maqsad — talabalar uchun dasturlashni oʻrganishni soddaroq va tushunarliroq qilish.",
-    "Hozir grantga harakat qilyapman va loyihani seza boshlashdi. Men uchun bu shunchaki yana bir qadam."
+    "Vosita kod oʻquvchi emas, sunʼiy intellekt tomonidan yozilganini aniqlaydi.",
+    "Oʻqituvchilarga laboratoriya ishlarini tez va adolatli tekshirishga yordam beradi.",
+    "Men oʻquvchilar ishlarini AIdan koʻchirmasdan, haqiqiy bilim olishlarini xohlayman.",
+    "Bu loyiha uchun biz allaqachon grant oldik va uni rivojlantirishda davom etyapmiz."
   ],
+  asideEyebrow: "Moodle AIdan alohida",
+  asideTitle: "Android dasturlash",
+  asideText: "Menga mobil dasturlash qiziq — bu loyiha bilan parallel shugʻullanadigan alohida yoʻnalishim.",
   quote: "Ogʻir damlar ham boʻldi: charchash, murakkab davrlar, qoʻl siltagim kelgan paytlar. Lekin vaqt oʻtishi bilan qiyinchiliklarga xotirjamroq qarashni oʻrgandim — <span class=\"grad\">va shunchaki oldinga yurishda davom etaman.</span>",
-  quoteNote: "Ortiqcha gaplarsiz — meni xotirjamroq va kuchliroq qilgan tajriba, xolos.",
+  quoteNote: "Ortiqcha gaplarsiz — meni xotirjamroq qilgan tajriba, xolos.",
   ctaTitle: "Kanalimga <span class=\"grad\">tashrif buyuring.</span>",
   ctaText: "Bu yerda mening yoʻlim dabdabasiz boʻladi — shunchaki hayot, oʻqish va loyihalar.",
   ctaBtn: "Kanalni ochish",
@@ -1455,9 +1507,9 @@ ky: {
   btnProject: "Менин долбоорум",
   btnMore: "Көбүрөөк билүү",
   chips: ["🇰🇬 Кыргызстан", "🏔️ Ош / Араван", "🎓 Студент", "💻 Иштеп чыгуу", "🤖 AI долбоор"],
-  eyebrows: ["Кайдан болом", "Мен жөнүндө", "Менин жолум", "Башкы долбоор", "Эмне кыйын болду", "Галерея", "Жетишкендиктер"],
+  eyebrows: ["Кайдан болом", "Мен жөнүндө", "Менин жолум", "Башкы долбоор", "Эмне кыйын болду", "Галерея", "Грамоталар"],
   titles: ["Кыргызстан.", "Жөнөкөй жигит.<br>Өз жолу.", "Программалоого кантип келгем.", "Менин сүрөттөрүм.", "Сыйлыктар."],
-  leads: ["Тоолор, кеңдик жана баары башталган жер.", "Түз сызык менен эмес. Бирок чыныгы жол.", "Барактаңыз — лента сыяктуу.", "Туура багытта бара жатканымды тастыктаган натыйжалар."],
+  leads: ["Тоолор, кеңдик жана баары башталган жер.", "Түз сызык менен эмес. Бирок чыныгы жол.", "Барактаңыз — лента сыяктуу.", "Бир нече грамота жана сертификат."],
   captions: ["Сары-Челек", "Ош", "Кыргызстандын тоолору"],
   aboutText: "Менин атым <strong>Мухаммадзохид</strong>. Мен Кыргызстанда, Ош шаарында, Араван районунда чоңойгом — ал жерде үй-бүлөнү, улууларды жана жөнөкөй адамдык баалуулуктарды сыйлашат. Бул мен үчүн азыр да маанилүү.<br><br>Балалыгымда жөнөкөй кызыкчыл бала элем: баары кантип иштээрин түшүнгүм келчү, кээде кереги жок жерлерге да кийлигишчүмүн жана ичинде эмне бар экенин көрүү үчүн буюмдарды сааттап чечип отурчумун. Дал ушул кызыгуу кийин мени программалоого алып келди.<br><br>Өзүмдү өзгөчө адам катары көрсөткөндү жактырбайм. Менде жөнөкөй кубанычтар, жөнөкөй кыйынчылыктар, кызыгууну жоготкон учурлар жана дээрлик нөлдөн баштоого туура келген учурлар болгон. <strong>Бирок жол дал ушундай түзүлөт.</strong>",
   factLabels: ["Кайдан болом", "Жашым", "Эмне маанилүү", "Азыр"],
@@ -1469,16 +1521,19 @@ ky: {
     "Кийин бул ишти бир азга таштап койгом. Биринчи курста программалоого кайттым, бирок тез эле чарчап калдым. Ошондо кызыгуу гана жетишсиз экени белгилүү болду — тартип жана сабыр керек.",
     "Чындап экинчи курста гана кайттым. Ашыкча ызы-чуусуз, токтоо жана так максат менен. Ошондон бери ишенимдүүрөөк алдыга жылып, туура багытта бара жатканымды тастыктаган натыйжаларды топтоп жатам."
   ],
-  projTagline: "Жасалма интеллект жардамы менен код талдоо. Кодду түшүнүүгө, каталарды табууга жана окууну түшүнүктүүрөөк кылууга жардам берген курал.",
-  projCardTitles: ["AI жана код талдоо", "Android иштеп чыгуу", "Окутуу", "Грант жана өнүгүү"],
+  projTagline: "Moodle AI жасалма интеллект жазган кодду аныктайт жана мугалимдерге окуучулардын лабораториялык иштерин текшерүүгө жардам берет. Окуу адилет, билим чыныгы болушу үчүн.",
+  projCardTitles: ["AI кодун аныктоо", "Мугалимдер үчүн", "Адилет окуу", "Грант"],
   projCardTexts: [
-    "Долбоордун негизги багыты — кодду түшүнгөн жана түшүндүргөн жасалма интеллект.",
-    "Мага мобилдик иштеп чыгуу кызык — бул AI менен катар экинчи чоң багытым.",
-    "Максат — студенттер үчүн программалоону үйрөнүүнү жөнөкөй жана түшүнүктүү кылуу.",
-    "Азыр грантка бара жатам, долбоорду байкай башташты. Мен үчүн бул жөн гана дагы бир кадам."
+    "Курал кодду окуучу эмес, жасалма интеллект жазганын аныктайт.",
+    "Мугалимдерге лабораториялык иштерди тез жана адилет текшерүүгө жардам берет.",
+    "Мен окуучулар иштерин AIдан көчүрбөй, чыныгы билим алышын каалайм.",
+    "Бул долбоорго биз буга чейин эле грант алганбыз жана аны өнүктүрүп жатабыз."
   ],
+  asideEyebrow: "Moodle AIдан өзүнчө",
+  asideTitle: "Android иштеп чыгуу",
+  asideText: "Мага мобилдик иштеп чыгуу кызык — бул долбоор менен параллель алектенген өзүнчө багытым.",
   quote: "Оор учурлар да болгон: чарчоо, татаал мезгилдер, колум шилтегим келген учурлар. Бирок убакыттын өтүшү менен кыйынчылыктарга токтоо кароону үйрөндүм — <span class=\"grad\">жана жөн гана алдыга жылууну улантам.</span>",
-  quoteNote: "Ашыкча сөзсүз — мени токтоо жана күчтүү кылган тажрыйба гана.",
+  quoteNote: "Ашыкча сөзсүз — мени токтоо кылган тажрыйба гана.",
   ctaTitle: "Каналыма <span class=\"grad\">кайрылып туруңуз.</span>",
   ctaText: "Бул жерде менин жолум ашыкча сөзсүз болот — жөн гана жашоо, окуу жана долбоорлор.",
   ctaBtn: "Каналды ачуу",
@@ -1507,6 +1562,9 @@ const I18N_MAP = [
   ['.project-tagline', 'projTagline'],
   ['.p-card h4', 'projCardTitles'],
   ['.p-card p', 'projCardTexts'],
+  ['.aside-eyebrow', 'asideEyebrow'],
+  ['.aside-project h4', 'asideTitle'],
+  ['.aside-project .aside-text', 'asideText'],
   ['.quote', 'quote', true],
   ['.quote-note', 'quoteNote'],
   ['.cta h2', 'ctaTitle', true],
